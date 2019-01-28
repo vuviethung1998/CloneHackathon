@@ -13,20 +13,21 @@ export default class Admin extends Component {
         axios
             .get(config.rootPath + "/admin")
             .then(data=> {
-                console.log(data.data);
                 this.setState({song: data.data});
             }) 
             .catch(err => console.error(err));
     }
     render() {
-        const allData = this.state.song.map(sng => <AdminData key={sng._id} sng={sng}/>)
-        console.log(allData);
+        //const allData = this.state.song.map(sng => <AdminData key={sng._id} sng={sng}/>)
+        const sng = this.state.song;   
+        console.log(sng);
         return (
         <div>
             <Bar/>
             <h1  className="text-center">Day la trang quan ly</h1>
-            <br />
-            {allData}        
+            {/* <br />
+            {allData}         */}
+            <AdminData sng ={sng}/>
         </div>
         )
     }
