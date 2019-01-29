@@ -11,4 +11,12 @@ SongRouter.get("/get",(req,res) => {
         res.send(data);
     });
 });
+
+// SongRouter.delete("/delete", (req,res) =>{
+//     co
+// })
+
+// SongRouter.post("")
+
+
 module.exports = SongRouter;

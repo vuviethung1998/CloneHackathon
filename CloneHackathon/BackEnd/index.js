@@ -12,7 +12,12 @@ const corsOption = {
     credentials: true,
 };
 app.use(cors(corsOption));
+app.use(express.static("./public"));
 
+app.get('/', (req,res)=>{
+    res.sendFile('./public/index.html');
+})
+    
 app.use((req, res, next) => {
     res.setHeader("X-Frame-Options", "ALLOWALL");
     res.setHeader(
